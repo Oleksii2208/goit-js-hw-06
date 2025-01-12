@@ -11,23 +11,25 @@ const customer = {
     return this.discount;
   },
   setDiscount(value) {
-    discount = value;
+    this.discount = value;
   },
   getOrders() {
     return this.orders;
   },
   addOrder(cost, order) {
-    this.balance -= cost - cost * discount;
+    this.balance -= cost - cost * this.discount;
     this.orders.push(order);
   },
   // Change code above this line
 };
-// customer.getDiscount();
-// customer.getBalance();
-console.log(customer.getOrders());
+console.log(customer.getDiscount());
 
-// customer.setDiscount(0.15);
-// console.log(customer.getDiscount()); // 0.15
-// customer.addOrder(5000, "Steak");
-// console.log(customer.getBalance()); // 19750
-// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+console.log(customer.getBalance());
+
+console.log(customer.orders);
+
+customer.setDiscount(0.15);
+console.log(customer.getDiscount()); // 0.15
+customer.addOrder(5000, "Steak");
+console.log(customer.getBalance()); // 19750
+console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
